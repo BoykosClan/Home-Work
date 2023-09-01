@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Домашня робота №18</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body style="color: #fff">
+    <div class="wrapper">
+      <div class="wrapper__container">
+        <div class="tasks">
+          <div class="task">
+            <div class="task__text">
+              <h1>Завдання 7</h1>
+              <p>Виконати завдання №7</p>
+              <a href="homework19.html" class="task__button">До головної!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="../HW19/image/1_snowflake__christmas_xmas_winter_snow_decoration_celebration_icon-icons.com_77036.svg" class="snowflake" style="top: 70px; left: 75px; color: #fff; animation-duration: 5s; animation-delay: 2s; opacity: 1;">
+    <img src="../HW19/image/1_snowflake__christmas_xmas_winter_snow_decoration_celebration_icon-icons.com_77036.svg" class="snowflake" style="top: 70px; left: 75px; color: #fff; animation-duration: 5s; animation-delay: 2s; opacity: 1;">
+    <img src="../HW19/image/1_snowflake__christmas_xmas_winter_snow_decoration_celebration_icon-icons.com_77036.svg" class="snowflake" style="top: 70px; left: 75px; color: #fff; animation-duration: 5s; animation-delay: 2s; opacity: 1;">
+    <img src="../HW19/image/1_snowflake__christmas_xmas_winter_snow_decoration_celebration_icon-icons.com_77036.svg" class="snowflake" style="top: 70px; left: 75px; color: #fff; animation-duration: 5s; animation-delay: 2s; opacity: 1;">
+    <img src="../HW19/image/1_snowflake__christmas_xmas_winter_snow_decoration_celebration_icon-icons.com_77036.svg" class="snowflake" style="top: 70px; left: 75px; color: #fff; animation-duration: 5s; animation-delay: 2s; opacity: 1;">
+    <img src="../HW19/image/1_snowflake__christmas_xmas_winter_snow_decoration_celebration_icon-icons.com_77036.svg" class="snowflake" style="top: 70px; left: 75px; color: #fff; animation-duration: 5s; animation-delay: 2s; opacity: 1;">
+    <script>    
+    function createImage(numberImage) {
+        for (let i = 0; i < numberImage; i++) {
+          const image = document.createElement("img");
+          image.src = "../tasks/img/SNOWFLAKE.svg";
+          image.classList.add("snowflake");
+          image.style.top = `${random(0, window.innerHeight)}px`;
+          document.body.append(image);
+        }
+      }
+      createImage(10);
+      const snowflakes = document.querySelectorAll(".snowflake");
+      const maxTop = window.innerHeight;
+      function random(min, max) {
+        return min + Math.floor(Math.random() * (max - min + 1));
+      }
+      function startSnowfall(snowflake) {
+        snowflake.style.left = `${random(0, window.innerWidth - 15)}px`;
+        snowflake.style.animationDuration = `${random(2, 6)}s`;
+        snowflake.style.animationDelay = `${random(0, 3)}s`;
+        snowflake.style.opacity = 1;
+        setTimeout(() => {
+          startSnowfall(snowflake);
+        }, random(100, 1000));
+      }
+      snowflakes.forEach((snowflake) => {
+        startSnowfall(snowflake);
+      });
+     </script>
+  </body>
+</html>

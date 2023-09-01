@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №5</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 4</h1>
+                        <p>Виконати завдання №3</p>
+                        <a href="homework7.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Задача 3. Створити окремі функції, які для 4 чисел знаходять: суму; добуток; середнє арифметичне; мінімальне значення. 
+
+        // Вводимо дані
+        const num1 = parseInt(prompt("Введіть перше число"));
+        const num2 = parseInt(prompt("Введіть друге число"));
+        const num3 = parseInt(prompt("Введіть третє число"));
+        const num4 = parseInt(prompt("Введіть четверте число"));
+
+        // Вираховуємо результати
+        function summ(num1, num2, num3, num4) {
+            let result = num1 + num2 + num3 + num4;
+            return result;
+        }
+
+        function product(num1, num2, num3, num4) {
+            let result = num1 * num2 * num3 * num4;
+            return result;
+        }
+
+        function average(num1, num2, num3, num4) {
+            let result = (num1 + num2 + num3 + num4) / 4;
+            return result;
+        }
+
+        function minValue(num1, num2, num3, num4) {
+            let result = Infinity;
+            if (result > num1) result = num1;
+            if (result > num2) result = num2;
+            if (result > num3) result = num3;
+            if (result > num4) result = num4;
+            return result;
+        }
+// Виводимо результати на екран
+document.write(
+`Задані числа ${num1}, ${num2}, ${num3}, ${num4} <br> 
+Сума = ${summ(num1, num2, num3, num4)} <br> 
+Добуток = ${product(num1, num2, num3, num4)} <br> 
+Середнє арифметичне = ${average(num1, num2, num3, num4)} <br> 
+Мінімальне значення = ${minValue(num1, num2, num3, num4)}`);
+    </script>
+</body>
+
+</html>

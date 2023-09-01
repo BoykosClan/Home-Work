@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №5</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 5</h1>
+                        <p>Виконати завдання №6</p>
+                        <a href="homework7.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<script>
+// Задача 4. Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість додатних, кількість більших за 100.
+// Вводимо дані
+
+let result;
+function multitask() {
+let evenNumber = 0;
+let positiveNumber = 0;
+let overNumber = 0;
+// Вираховуємо результати
+for (let i = 1; i <= 5; i++) {
+let num = parseInt(prompt(`Введіть число №${i}, `));
+document.write(`${num} `);
+if (num % 2 === 0) evenNumber++;
+if (num > 0) positiveNumber++;
+if (num > 100) overNumber++;
+}
+result = [evenNumber, positiveNumber, overNumber];
+return result;
+}
+multitask();
+document.write(
+`<br> 1) кількість парних : ${result[0]} <br> 2) кількість додатних : ${result[1]} <br> 3) кількість більших за 100 : ${result[2]}`
+);
+             
+
+</script>
+</body>
+
+</html>

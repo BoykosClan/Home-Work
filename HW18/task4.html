@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №18</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 4</h1>
+                        <p>Виконати завдання №4</p>
+                        <a href="homework18.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<script>
+
+let array = ['Бажання 1', 'Бажання 2', 'Бажання 3', 'Бажання 4', 'Бажання 5', 'Бажання 6']
+		for (let i = 0; i < 3; i++) {
+			if (array.length === 0) {
+				break; // Якщо масив порожній, завершуємо цикл
+			}
+			randomNumber = Math.floor(Math.random() * array.length);
+			let elDiv = document.createElement('div');
+			elDiv.innerText = array[randomNumber];
+			document.body.append(elDiv);
+			array.splice(randomNumber, 1); // Видаляємо вибране слово з масиву. Це зроблено для того, щоб слова не повторювались.
+		}
+
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №3</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script>
+// Вводимо дані
+// 4.	З клавіатури вводиться вік людини.Вивести на екран ким він є(дитиною у садочку, школярем, студентом, працівником, пенсіонером).       
+let humanAge = parseInt(prompt(`Введідь вік людини`))
+// Вираховуємо результати
+if (humanAge < 6) 
+alert('Ви немовля!') 
+else if(humanAge > 3 && humanAge < 6)
+alert('Ви відвідуєте дитячий садок!')
+else if (humanAge > 6 && humanAge < 15)
+alert('Ви школяр!')
+else if (humanAge > 15 && humanAge < 24)
+alert('Ви студент!')
+else if (humanAge > 24 && humanAge < 60)
+alert('Ви ходите на роботу!')
+else if (humanAge > 60 && humanAge < Infinity)
+alert('Ви пенсіонер!')       
+
+    </script>
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 4</h1>
+                        <p>Виконати завдання №4</p>
+                        <a href="homework3.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

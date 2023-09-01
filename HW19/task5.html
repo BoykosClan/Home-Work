@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Домашня робота №18</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body style="color: #fff">
+    <div class="wrapper">
+      <div class="wrapper__container">
+        <div class="tasks">
+          <div class="task">
+            <div class="task__text">
+              <h1>Завдання 5</h1>
+              <p>Виконати завдання №5</p>
+              <a href="homework19.html" class="task__button">До головної!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      
+      const data = [
+        {
+          image:
+            "https://content2.rozetka.com.ua/goods/images/preview/344150358.jpg",
+          title: "Ноутбук Acer Nitro 5 AN515-57-53P6(NH.QELEU.00Z) Shale Black",
+          price: 36999,
+          link: "https://rozetka.com.ua/ua/acer-nhqeleu00z/p383717991/",
+        },
+        {
+          image:
+            "https://content2.rozetka.com.ua/goods/images/preview/283529272.jpg",
+          title: "Ноутбук ASUS TUF Gaming F15 FX506HE-HN012 (90NR0704-M00CW0)",
+          price: 33999,
+          link: "https://rozetka.com.ua/ua/asus-90nr0704-m00cw0/p351781200/",
+        },
+        {
+          image:
+            "https://content2.rozetka.com.ua/goods/images/preview/262510710.jpg",
+          title: "Ноутбук ASUS ROG Strix G17 G713RC-HX011 (90NR08F4-M000P0) Eclipse Gray",
+          price: 41999,
+          link: "https://rozetka.com.ua/ua/asus-90nr08f4-m000p0/p339528712/",
+        },
+        {
+          image:
+            "https://content.rozetka.com.ua/goods/images/preview/320925224.jpg",
+          title: "Ноутбук Lenovo Legion 5 15ITH6H (82JH00LRRA) Phantom Blue",
+          price: 49999,
+          link: "https://rozetka.com.ua/ua/lenovo-82jh00lrra/p358690092/",
+        },
+      ];
+
+      const createCardProduct = ({ image, title, price, link }) => {
+        return `
+      <div class="card">
+            <div class="container-image">
+            <img src="${image}" alt="${title}"/>
+            </div>
+            <a href = "${link}" target="_blank" class="link">${title}</a>
+            <p class="text">Price: ${price} UAH</p>
+            </div>
+            `;
+      };
+      const createProductsList = data.map(createCardProduct).join("");
+      const div = document.createElement("div");
+      div.classList.add("container");
+      document.body.append(div);
+      div.innerHTML = createProductsList;
+      const updateBorderColor = (i) => {
+        const cards = document.querySelectorAll(".card");
+        cards[i].classList.toggle("selectedProduct");
+      };
+      window.onload = function () {
+        const cards = document.querySelectorAll(".card");
+          for (let i = 0; i < cards.length; i++) {
+          cards[i].onclick = () => updateBorderColor(i);
+        }
+      };
+    
+    </script>
+    
+  </body>
+</html>

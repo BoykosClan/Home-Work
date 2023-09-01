@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №5</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+
+<div class="wrapper">
+    <div class="wrapper__container">
+        <div class="tasks">
+            <div class="task">
+                <div class="task__text">
+                    <h1>Завдання 1</h1>
+                    <p>Виконати завдання №0</p>
+                    <a href="homework7.html" class="task__button">До головної!</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+
+// Завдання №0 Створити функцію, яка за номером місяця повертає пору року, до якої відноситься цей місяць.
+
+// Вводимо дані і вираховуємо результат
+              const monthNumber = parseInt(prompt("Введіть номер місяця"));
+              let result;
+              function season(monthNumber) {
+                if (monthNumber < 3 || monthNumber === 12) result = "Зима";
+                else if (monthNumber < 6) result = "Весна";
+                else if (monthNumber < 9) result = "Літо";
+                else if (monthNumber < 12) result = "Осінь";
+                return result;
+              }
+              
+            
+// Виводимо результат   
+document.write(season(monthNumber)); 
+
+</script>
+
+</body>
+
+</html>

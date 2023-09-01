@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №15</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 4</h1>
+                        <p>Виконати завдання №4</p>
+                        <a href="homework15.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<script>
+// Задача 4. Розробити клас Baner
+ let arrayBanners = [
+				{
+					image: '../HW15/image/image1.jpg',
+					link: 'https://i.infocar.ua/i/2/6250/118804/1920x.jpg'
+				},
+				{
+					image: '../HW15/image/image2.jpg',
+					link: 'https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1683645145/autoexpress/2023/05/Toyota%20RAV4%20PHEV%20007_wqi243.jpg'
+				},
+				{
+					image: '../HW15/image/image3.jpg',
+					link: 'https://www.ixbt.com/img/n1/news/2023/6/4/toyota-land-cruiser-prado-front2.jpg_large.png'
+				},
+                {
+					image: '../HW15/image/image4.jpg',
+					link: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIjYnC6O2XcgcLeyo1fEkYEr8wodiV49W9Bg&usqp=CAU'
+				},
+				{
+					image: '../HW15/image/image5.jpg',
+					link: 'https://cdn.motor1.com/images/mgl/1ZznqX/s1/2022-toyota-hilux-gr-sport-south-africa.jpg'
+				},
+			];
+
+			class Baner {
+				constructor(baners) {
+					this.baners = baners
+				};
+
+				getRandomBanerIndex(min = 0, max = this.baners.length - 1) {
+					return min + Math.floor(Math.random() * (max - min + 1))
+				}
+
+				render() {
+					let randomBanerIndex = this.getRandomBanerIndex();
+					document.write(`
+						<div class="banner">
+							<a class="banner__link" style= "width: 370px" href="${this.baners[randomBanerIndex].link}" target="_blank">
+							<img class="banner__image" style= "width: 370px" src="${this.baners[randomBanerIndex].image}" alt="image">
+							</a>
+						</div>`)
+				}
+
+			}
+            let baner1 = new Baner(arrayBanners);
+			baner1.render()
+</script>
+
+</body>
+</html>

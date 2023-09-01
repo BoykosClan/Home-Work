@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №5</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 5</h1>
+                        <p>Виконати завдання №6</p>
+                        <a href="homework6.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<script>
+// 5. Інвестор вклав n  тис. грн на 20 років під 20% річних. Визначити за допомогою циклів суму, яку він одержить (без оподаткування).   
+// Вводимо дані
+const enterSum = parseInt(prompt("Вкажіть суму в грн"));
+const percentageOfProfit = 20;
+let result = enterSum;
+// Вираховуємо результати
+for (let i = 0; i < 20; i++) {
+result = result + (result * percentageOfProfit) / 100;
+}
+document.write(
+`При вкладених ${enterSum} грн за 20 років під 20% річних ви отримаєте ${result.toFixed(
+0
+)} грн`
+);
+            
+
+</script>
+</body>
+
+</html>

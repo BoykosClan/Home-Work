@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №18</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 3</h1>
+                        <p>Виконати завдання №3</p>
+                        <a href="homework19.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+   
+<script>
+      const createList = ({
+        quantityOl,
+        minLi,
+        maxLi,
+        minNumber,
+        maxNumber,
+      }) => {
+        for (let i = 0; i < quantityOl; i++) {
+          const ol = document.createElement("ol");
+          ol.textContent = `Список ${i + 1}`;
+          ol.classList.add("list");
+
+          const randomNumberLi =
+            minLi + Math.floor(Math.random() * (maxLi - minLi + 1));
+
+          for (let i = 1; i <= randomNumberLi; i++) {
+            const li = document.createElement("li");
+
+            const randomNumber =
+              minNumber +
+              Math.floor(Math.random() * (maxNumber - minNumber + 1));
+
+            li.textContent = randomNumber;
+            ol.append(li);
+          }
+
+          document.body.append(ol);
+        }
+      };
+
+      const button = document.createElement("button");
+      button.textContent = "Зафарбувати елементи";
+
+      function coloringLists() {
+        const lists = document.querySelectorAll(".list");
+        console.log(lists);
+
+        for (const list of lists) {
+          !(list.children.length % 2)
+            ? (list.style.backgroundColor = "green")
+            : (list.style.backgroundColor = "red");
+          console.log(list.children);
+        }
+      }
+
+      document.body.append(button);
+
+      window.onload = function () {
+        button.onclick = coloringLists;
+      };
+
+      createList({
+        quantityOl: 5,
+        minLi: 1,
+        maxLi: 10,
+        minNumber: 1,
+        maxNumber: 100,
+      });
+    
+</script>
+</body>
+</html>

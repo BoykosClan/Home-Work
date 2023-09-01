@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Домашня робота №15</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body style="color: #fff">
+    <div class="wrapper">
+      <div class="wrapper__container">
+        <div class="tasks">
+          <div class="task">
+            <div class="task__text">
+              <h1>Завдання 0</h1>
+              <p>Виконати завдання №0</p>
+              <a href="homework15.html" class="task__button">До головної!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Задача 0. Дано два об’єкта. Обидва містять масив цілих чисел. При цьому у одному з них є функція знаходження суми, а у іншому – функція для знаходження добутку тих, які знаходяться між заданими мінімальним і максимальних значенням. Використати обидва методи стосовно обидвох об’єктів (використати call, apply)
+      // Object 1
+      let obj1 = {
+        arr: [7, 8, 9, 5, 2],
+      
+      addNum: function() {
+        let res = 0
+        for (let i = 0; i < this.arr.length; i++) {
+          res += this.arr[i]
+        }
+        return res
+      }
+    }
+    // Object 2
+      let obj2 = {
+        arr: [1, 4, 8, 9, 2, 3, 4],
+
+      multiplyNum: function() {
+        let res = 1
+        for (let i = 0; i < this.arr.length; i++) {
+          if (this.arr[i] > 2 && this.arr[i] < 9) {
+            res *= this.arr[i]  
+          }
+        }
+        return res
+      }
+    } 
+    // Show the result
+    let addObject2WithCall = obj1.addNum.call(obj2)
+    document.write(`Додаємо всі числа з obj2: ${addObject2WithCall}<br>`)
+    let multiplyObj1WithCall = obj2.multiplyNum.call(obj1)
+    document.write(`Множимо всі числа з obj1: ${multiplyObj1WithCall}<br>`)
+ 
+    let addObj2WithApply = obj1.addNum.apply(obj2)
+    document.write(`Додаємо всі числа з obj2: ${addObj2WithApply}<br>`)
+    let multiplyObj1WIthApply = obj2.multiplyNum.apply(obj1)
+    document.write(`Множимо всі числа з obj1: ${multiplyObj1WIthApply}<br>`)   
+  
+    </script>
+  </body>
+</html>

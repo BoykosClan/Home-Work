@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №8</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 4</h1>
+                        <p>Виконати завдання №4</p>
+                        <a href="homework9.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+//4.Дано масив елементів. Вивести на екран елементи, що більші за 100
+			let numsCount = parseInt(prompt("Скільки елементів будете вводити?"));
+			let array = enterNums(numsCount);
+			for (const num of array) {
+				if (num >= 100) {
+					
+                document.write(`${num}<br>`);
+				}
+			}
+			function enterNums(num) {
+				let array = [];
+				for (let index = 0; index < num; index++) {
+					let userNumber = parseInt(prompt("Введіть число"));
+					array.push(userNumber);
+				}
+				return array;
+			}
+
+		
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №12</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 4</h1>
+                        <p>Виконати завдання №4</p>
+                        <a href="homework12.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+// Для розглянутих методів сортування спробувати вивести етапи сортування шляхом виведення відповідних таблиць за зразком.
+// Вводимо дані
+function getRandArr(arrLength, minValue, maxValue) {
+            let arr = []
+            for (let i = 0; i < arrLength; i++) {
+                let randNum = minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+                arr.push(randNum)
+            }
+            return arr
+        }
+        let arr1 = getRandArr(5, 1, 100)
+        let arr2 = getRandArr(5, 1, 100)
+        let arr3 = getRandArr(5, 1, 100)
+        const swap = (arr, i, j) => {
+            const temp = arr[i]
+            arr[i] = arr[j]
+            arr[j] = temp
+        }
+        function getBubbleSort(arr) {
+            document.write(`[${arr}]<br>`)
+        let changed
+            do {
+                changed = false
+                for (let i = 1; i < arr.length; i++) {
+                    if (arr[i - 1] > arr[i]) {
+                        swap(arr, i - 1, i)
+                        document.write(`[${arr}]<br>`)
+                        changed = true
+                    }
+                }
+            } while (changed);
+        }
+        getBubbleSort(arr1)
+        document.write(`<br>`)
+        document.write(`<br>`)
+        document.write(`<br>`)
+        document.write(`<br>`)
+        function shakerSort(arr) {
+            document.write(`[${arr}]<br>`)
+            let leftIndex = 0
+            let rightIndex = arr.length - 1
+            while (leftIndex < rightIndex) {
+                for (let index = leftIndex; index < rightIndex; index++) {
+                    if (arr[index] > arr[index + 1]) swap(arr, index, index + 1)
+                    document.write(`[${arr}]<br>`)
+                }
+                rightIndex--
+                for (let index = rightIndex; index > leftIndex; index--) {
+                    if (arr[index] < arr[index - 1]) swap(arr, index, index - 1)
+                    document.write(`[${arr}]<br>`)
+
+                }
+                leftIndex++
+            }
+            console.log(arr)
+        }
+        shakerSort(arr2)
+        document.write(`<br>`)
+        document.write(`<br>`)
+        document.write(`<br>`)
+        document.write(`<br>`)
+    </script>
+</body>
+
+</html>

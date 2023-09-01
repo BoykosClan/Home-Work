@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Домашня робота №13</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body style="color: #fff">
+    <div class="wrapper">
+      <div class="wrapper__container">
+        <div class="tasks">
+          <div class="tasks">
+            <div class="task">
+              <div class="task__text">
+                <h1>Завдання 2</h1>
+                <p>Виконати завдання №2</p>
+                <a href="homework13.html" class="task__button">До головної!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Завдання 2 Реалізувати бінарний пошук (розглядали на попередніх уроках) з використанням рекурсивного алгоритму.
+
+      // Вираховуємо необхідні дані
+
+      // Виводимо результати на екран
+
+      // Задача 2. Реалізувати бінарний пошук (розглядали на попередніх уроках) з використанням
+      // рекурсивного алгоритму.
+      //Рекурсивний бінарний пошук
+      function recursiveBinarySearch(array, start, end, searching) {
+        if (start > end) return false;
+        let mid = Math.floor((start + end) / 2);
+        if (array[mid] === searching) return true;
+        if (array[mid] > searching)
+          return recursiveBinarySearch(array, start, mid - 1, searching);
+        if (array[mid] < searching)
+          return recursiveBinarySearch(array, mid + 1, end, searching);
+        return false;
+      }
+
+      let array = [2, 9, 15, 12, 32, 67, 89, 45, 96, 56];
+      let search = recursiveBinarySearch(array, 0, array.length - 1, 67);
+      document.write(search);
+    </script>
+  </body>
+</html>

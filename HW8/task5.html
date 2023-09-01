@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №8</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 5</h1>
+                        <p>Виконати завдання №7</p>
+                        <a href="homework8.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<script>
+// Задача 7. Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:
+// 1)	за весь рік;
+// 2)	у першій половині року;
+// 3)	у другій половині року;
+// 4)	за літо;
+// 5)	за ІІ квартал;
+// 6)	за парні місяці (з парними номерами);
+// 7)	за місяці, які є початковими у сезоні (весна, літо, осінь, зима).
+
+      // Вводимо необхідні дані
+      let paymentsArray = [100, 787, 825, 3215, 1245, 345, 458, 578, 788, 452, 158, 745]
+      let sum = 0
+      function getSum(paymentsArray) {
+        for (let i = 0; i < paymentsArray.length; i++) {
+          sum += paymentsArray[i]
+        }
+        return sum
+      }
+
+       //Плата у ершій половині року;
+      let sumOfFirstHalf = 0
+      function getSumPerFirstSixMonthes(paymentsArray) {
+        for (let i = 0; i <= 5; i++) {
+          sumOfFirstHalf += paymentsArray[i]
+        }
+        return sumOfFirstHalf
+      }
+
+      //Плата у другій половині року;
+      let sumOfSecondHalf = 0
+      function getSumPerSecondSixMonthes(paymentsArray) {
+        for (let i = 6; i <= 11; i++) {
+          sumOfSecondHalf += paymentsArray[i]
+        }
+        return sumOfSecondHalf
+      }
+      
+      //Плата за літо
+      let sumOfSummerMonthes = 0
+      function getSumForSummer(paymentsArray) {
+        for (let i = 5; i <= 7; i++) {
+          sumOfSummerMonthes += paymentsArray[i]
+        }
+        return sumOfSummerMonthes
+      }
+
+      //Плата за ІІ квартал;
+      let sumOfSecondQuarter = 0
+      function getSumSecondQuarter(paymentsArray) {
+        for (let i = 3; i <= 5; i++) {
+          sumOfSecondQuarter += paymentsArray[i]
+        }
+        return sumOfSecondQuarter
+      }
+
+      //Плата за парні місяці
+      let evenMonthes = 0
+      function getSumOfEvenMonthes(paymentsArray) {
+        for (let i = 1; i <= 12; i++) {
+          if (paymentsArray[i] % 2 === 0) {
+            evenMonthes += paymentsArray[i]
+          }
+        }
+        return evenMonthes
+      }
+
+      //Плата за перші місяці в сезоні
+      let firstMonthesInSeason = 0
+      function getSumOfFirstMonthes(paymentsArray) {
+        for (let i = 1; i <= 12; i+=3) {     
+          firstMonthesInSeason += paymentsArray[i]
+        }
+        return firstMonthesInSeason
+      }
+
+      // Виводимо результат
+      const sumOfYear = getSum(paymentsArray)
+      document.write(`За рік: ${sumOfYear}<br>`)
+      const sumOfFirstHalfOfYear = getSumPerFirstSixMonthes(paymentsArray)
+      document.write(`За друге півріччя: ${sumOfFirstHalf}<br>`)
+      const sumOfSecondHalfOfYear = getSumPerSecondSixMonthes(paymentsArray)
+      document.write(`За друге півріччя: ${sumOfSecondHalf}<br>`)
+      const summerMonthes = getSumForSummer(paymentsArray)
+      document.write(`За літо: ${summerMonthes}<br>`)
+      const sumForSecondQuart = getSumForSummer(paymentsArray)
+      document.write(`За другий квартал: ${getSumSecondQuarter(paymentsArray)}<br>`)
+      const sumForEvenMonthes = getSumOfEvenMonthes(paymentsArray)
+      document.write(`За парні місяці: ${sumForEvenMonthes}<br>`)
+      const sumOfFirstInSeason = getSumOfFirstMonthes(paymentsArray)
+      document.write(`За перші місяці в сезоні: ${sumOfFirstInSeason}<br>`)
+    
+</script>
+</body>
+
+</html>

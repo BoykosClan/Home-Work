@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Домашня робота №18</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body style="color: #fff">
+    <div class="wrapper">
+      <div class="wrapper__container">
+        <div class="tasks">
+          <div class="tasks">
+            <div class="task">
+              <div class="task__text">
+                <h1>Завдання 2</h1>
+                <p>Виконати завдання №2</p>
+                <a href="homework19.html" class="task__button">До головної!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+    
+    </div>
+    <div>Hello!</div>
+    <div>Hello!</div>
+    <div>Hello!</div>
+    <div>Hello!</div>
+    <div>Hello!</div>
+    <div>Hello!</div>
+    <div>Hello!</div>
+    <div>Hello!</div>
+    <div>Hello!</div>
+    <div>Hello!</div>
+    <script>
+function getElem() {
+			this.style.color = 'red';
+			let td = this.nextElementSibling;
+
+			while (td) {
+				td.style.color = 'red';
+				td = td.nextElementSibling;
+			}
+		}
+		const colors = document.querySelectorAll('div')
+		for (const key of colors) {
+			key.onclick = getElem
+		}
+	
+</script>
+  </body>
+</html>

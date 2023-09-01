@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script>
+
+        // Задача 7. Знайти суму випадкового номера місяця (від 1 до 12) та випадкового номера дня (від 0 до 6).
+
+        // Вхідні дані: firstMonth - номер першого місяця, lastMonth - номер останнього місяця, randomMonth - випадковий номер місяця,
+        //  firstDay - нижня границя для випадкового номера дня, lastDay - верхня границя для випадкового номера дня,  randomDay - випадковий номер дня
+        // Результат: sum - сумf випадкового номера місяця (від 1 до 12) та випадкового номера дня (від 0 до 6).
+
+        const firstMonth = 1;
+        const lastMonth = 2;
+        const firstDay = 3;
+        const lastDay = 4;
+
+        let randomMonth = firstMonth + Math.floor(Math.random() * (lastMonth - firstMonth + 1));
+        let randomDay = firstDay + Math.floor(Math.random() * (lastDay - firstDay + 1));
+        let sum = randomMonth + randomDay;
+
+        console.log(randomMonth);
+        console.log(randomDay);
+
+        alert(`Випадкове значення місяця: ${randomMonth}\nВипадкове значення дня: ${randomDay}\nСума: ${sum}`)
+
+    </script>
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 6</h1>
+                        <p>З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість
+                            кожного товару окремо та
+                            загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.</p>
+                        <a href="homework2.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

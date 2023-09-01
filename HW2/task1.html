@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+    <div class="wrapper__container">
+        <div class="tasks">
+            <div class="task">
+                <div class="task__text">
+                    <h1>Завдання 3</h1>
+                    <p>Дано вартість одиниці товару і кількість. Знайти загальну вартість та ПДВ (5% від
+                        загальної
+                        вартості).
+                    </p>
+                    <a href="homework2.html" class="task__button">До головної!</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+        <script>
+
+
+            //1.Вводимо необхідні дані
+            let a = parseInt(prompt('Введіть перше число', '0'))
+            let b = parseInt(prompt('Введіть друге число', '0'))
+            //2.Знаходимо результат
+            let sum = a + b
+            let product = a * b
+            let fraction = a / b
+            //3.Виводимо результат
+            document.write(`
+<style>
+	table {
+		border-collapse: collapse;
+		width: 100%;
+        color: #fff;
+	}
+	th, td {
+		padding: 10px;
+		text-align: left;
+		border: 2px solid #ffffff;
+	}
+</style>
+<table>
+	<tr>
+	<th>Сума</th>
+	<th>Добуток</th>
+	<th>Частка</th>
+	</tr>
+
+	<tr>
+	<td>${sum}</td>
+	<td>${product}</td>
+	<td>${fraction}</td>
+	</tr>
+	</table>`)
+
+        </script>
+</body>
+
+</html>

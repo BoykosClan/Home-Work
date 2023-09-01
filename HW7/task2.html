@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №5</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="tasks">
+                    <div class="task">
+                        <div class="task__text">
+                            <h1>Завдання 2</h1>
+                            <p>Виконати завдання №1</p>
+                            <a href="homework7.html" class="task__button">До головної!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+
+// Задача 1. Створити функцію, яка за номером місяця повертає його назву.
+// Вводимо дані і вираховуємо результати
+const monthNumber = parseInt(prompt("Введіть номер місяця"));
+              function monthName(monthNumber) {
+                let result;
+              switch (monthNumber) {
+                case 1: result = "Січень";
+                break;
+                case 2: result = "Лютий";
+                break;
+                case 3: result = "Березень";
+                break;
+                case 4: result = "Квітень";
+                break;
+                case 5: result = "Травень";
+                break;
+                case 6: result = "Червень";
+                break;
+                case 7: result = "Липень";
+                break;
+                case 8: result = "Серпень";
+                break;
+                case 9: result = "Вересень";
+                break;
+                case 10: result = "Жовтень";
+                break;
+                case 11: result = "Листопад";
+                break;
+                case 12: result = "Грудень";
+                break;
+                default: result = "Такого місяця не існує!"
+                break;
+              }
+            return result;
+              }
+              
+            
+// Виводимо результати на екран
+document.write(monthName(monthNumber));    
+    
+</script>
+</body>
+
+</html>

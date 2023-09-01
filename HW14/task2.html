@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Домашня робота №13</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body style="color: #fff">
+    <div class="wrapper">
+      <div class="wrapper__container">
+        <div class="tasks">
+          <div class="tasks">
+            <div class="task">
+              <div class="task__text">
+                <h1>Завдання 2</h1>
+                <p>Виконати завдання №2</p>
+                <a href="homework13.html" class="task__button">До головної!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Задача 2. Розробити функцію, у яку передають об’єкт (день, місяць, рік). Визначити, який буде рік через N місяців.
+      let userDate = {
+        day: 2,
+        month: 8,
+        year: 2023,
+      };
+
+      document.write(
+        `Day: ${userDate.day}<br>Month: ${userDate.month}<br>Year: ${userDate.year}<br><br>`
+      );
+
+      function getTargetYear({ month, year }, monthAmount) {
+        return year + Math.floor((month - 1 + monthAmount) / 12);
+      }
+      const monthAmount = 1 + Math.floor(Math.random() * 36);
+      let targetYear = getTargetYear(userDate, monthAmount);
+      document.write(`Через ${monthAmount} місяців буде ${targetYear} рік`);
+    </script>
+  </body>
+</html>

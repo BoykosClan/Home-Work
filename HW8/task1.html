@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №8</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 1</h1>
+                        <p>Виконати завдання №1</p>
+                        <a href="homework8.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script>
+        // Задача 1. Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії він відноситься (відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є хоча би одна трійка)).
+
+        let scoresNum = parseInt(prompt('Введіть кількість оцінок'))
+        let scores = []
+        for (let i = 0; i < scoresNum; i++) {
+            let userScores = parseInt(prompt(`Введіть ${i + 1} оцінку`))
+            scores.push(userScores)
+        }
+        function getMinScore(scores) {
+            let minScore = scores[0]
+            for (let i = 0; i < scores.length; i++) {
+                if (minScore > scores[i]) minScore = scores[i]
+            }
+            return minScore
+        }
+        function getStudentsCategory(scores) {
+            let category
+            switch (getMinScore(scores)) {
+                case 1:
+                case 2:
+                    category = 'Двійочник'
+                    break;
+                case 3:
+                    category = 'Трійочник'
+                    break;
+                case 4:
+                    category = 'Хорошист'
+                    break;
+                case 5:
+                    category = 'Відмінник'
+                    break;
+                default:
+                    throw new Error('Некоректна оцінка')
+                    break;
+            }
+            return category
+        }
+
+        document.write(getStudentsCategory(scores))
+
+    </script>
+
+</body>
+
+</html>

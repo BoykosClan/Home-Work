@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Домашня робота №18</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body style="color: #fff">
+    <div class="wrapper">
+      <div class="wrapper__container">
+        <div class="tasks">
+          <div class="task">
+            <div class="task__text">
+              <h1>Завдання 1</h1>
+              <p>Виконати завдання №1</p>
+              <a href="homework18.html" class="task__button">До головної!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="calc">
+      <div class="calc_firstNum">
+        <label for="firstNum" class="mlFirst">First num</label>
+        <input id="firstNum" type="number" value="" class="enterField">
+      </div>
+      <div class="calc_secondNum">
+        <label for="secondNum">Second num</label>
+        <input id="secondNum" type="number" value="" class="enterField">
+      </div>
+      <div class="calc_button">
+        <button id="Plus">Додати</button>
+        <button id="minus">Відняти</button>
+        <button id="multiply">Помножити</button>
+        <button id="divide">Поділити</button>
+      </div>
+      <div class="calc_result">
+        <label for="result" class="mrResult">Результат</label>
+        <input id="result" type="number" value="" class="enterField">
+      </div>
+    </div>
+<script>
+  
+  function calc(inValue) {
+      const firstNum = parseFloat(document.getElementById('firstNum').value)
+      const secondNum = parseFloat(document.getElementById('secondNum').value)
+      let operation
+      if(inValue==='add') operation = firstNum + secondNum
+      else if(inValue==='minus') operation = firstNum - secondNum
+      else if(inValue==='multiply') operation = firstNum * secondNum
+      else if(inValue==='divide')operation = firstNum / secondNum
+      document.getElementById('result').value = operation.toFixed(2)
+      
+    }
+
+    window.onload = function () {
+        document.getElementById('Plus').onclick = () =>calc('add')
+        document.getElementById('minus').onclick = () =>calc('minus')
+        document.getElementById('multiply').onclick = () =>calc('multiply')
+        document.getElementById('divide').onclick = () =>calc('divide')
+      }
+</script>
+  </body>
+</html>

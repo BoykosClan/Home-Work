@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №5</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 3</h1>
+                        <p>Виконати завдання №2</p>
+                        <a href="homework7.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+// Задача 2. Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.     
+const dayNumber = parseInt(prompt("Введіть номер дня"));
+// Вираховуємо результати
+function dayName(dayNumber) {
+                let result;
+              switch (dayNumber) {
+                case 1: 
+                case 2: 
+                case 3: 
+                case 4: 
+                case 5: result = "Робочий";
+                break;
+                case 6: 
+                case 7: result = "Вихідний";
+                break;
+                default: result = "Такого дня не існує!" 
+                break;
+              }
+            return result;
+              }            
+// Виводимо результати на екран
+document.write(dayName(dayNumber));    
+
+
+</script>
+
+</body>
+
+</html>

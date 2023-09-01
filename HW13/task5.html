@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №13</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 5</h1>
+                        <p>Виконати завдання №5</p>
+                        <a href="homework13.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<script>
+      // Задача 5. Тренажер додавання. Кожні 10 секунд користувачу задають випадковий приклад з додавання двох цифр і робиться перевірка.
+      function getTrainer(minNum, maxNum) {
+        setInterval(function () {
+          const firstRandomNum =
+            Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum
+          const secondRandomNum =
+            Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum
+          let answer = parseInt(
+            prompt(`${firstRandomNum} + ${secondRandomNum} =`)
+          )
+          if (answer === firstRandomNum + secondRandomNum) {
+            alert('Правильно! Очікуйте наступний приклад')
+          } else {
+            alert('Не вірно. Очікуйте наступний приклад')
+          }
+        }, 10000)
+      }
+
+      getTrainer(1, 10)
+    
+</script>
+</body>
+
+</html>

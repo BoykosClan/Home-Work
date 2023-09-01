@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+body {
+  background-image: url(../image/wald-toyota-hilux-black-bison-5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  padding: 50px 30px;
+}
+
+.task6 {
+  background-color: #403b3b;
+}
+
+.wrapper__container {
+  max-width: 1610px;
+  display: flex;
+  display: flex;
+}
+
+.tasks {
+  display: flex;
+}
+
+.task {
+  border: 3px solid #313131;
+  width: 350px;
+  height: auto;
+  padding: 20px;
+  margin: 15px;
+  background-color: rgba(105, 105, 105, 0.475);
+}
+.task P {
+  margin-bottom: 35px;
+}
+
+.task__button {
+  padding-top: 25px;
+  text-decoration: none;
+  background-color: #403b3b;
+  color: #0c0c0c;
+  padding: 10px 70px;
+}
+.task__button:hover {
+  background-color: #0c0c0c;
+  color: #fff;
+}/*# sourceMappingURL=style.css.map */

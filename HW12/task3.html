@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №12</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 3</h1>
+                        <p>Виконати завдання №3</p>
+                        <a href="homework12.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<script>
+// Задача 3. Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів під час сортування включеннями.
+// Вводимо дані
+function getRandArr(arrLength, minValue, maxValue) {
+            let arr = []
+            for (let i = 0; i < arrLength; i++) {
+                let randNum = minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+                arr.push(randNum)
+            }
+            return arr
+}
+// Вираховуємо необхідні результати
+let arr = getRandArr(30, 1, 100)
+        function insertSort(arr) {
+            let counter = 0
+
+            for (let i = 1; i < arr.length; i++) {
+                const currElement = arr[i];
+                let k = i - 1
+                while (k >= 0 && arr[k] > currElement) {
+                    arr[k + 1] = arr[k]
+                    k = k - 1
+                    counter++
+                 
+                }
+                arr[k + 1] = currElement
+            }
+            console.log(arr)
+            return counter
+}
+// Виводимо результати на екран
+document.write(insertSort(arr))
+    
+</script>
+</body>
+</html>

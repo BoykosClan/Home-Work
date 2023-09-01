@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script>
+        
+            let a = parseFloat(prompt("Введіть значення а", "0"));
+            let b = parseFloat(prompt("Введіть значення b", "0"));
+            let c = parseFloat(prompt("Введіть значення c", "0"));
+
+            let s1 = a + 12 + b;
+            let s2 = Math.sqrt((a + b) / (2 * a));
+            let s3 = Math.pow((a + b) * c, 1 / 3);
+            let s4 = Math.sin(a / -b);
+
+            alert(`S1 = ${s1.toFixed(4)}\nS2 = ${s3.toFixed(4)}\nS3 = ${s2.toFixed(4)}\nS4 = ${s4.toFixed(4)}`)
+
+        
+    </script>
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Знайти значення виразу!</h1>
+                        <p>
+                            S1=a+12+b <br>
+                            S2=a+b2a <br>
+                            S3=3(a+b)c <br>
+                            S4=sin⁡(a-b) <br>
+                        </p>
+                        <a href="homework2.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №8</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 3</h1>
+                        <p>Виконати завдання №3</p>
+                        <a href="homework8.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+    // Задача 3. Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я «Іван».
+    // Вводимо необхідні дані
+    let pupilsNumber = parseInt(prompt('Введіть кількість імен'))
+      let arrayOfNames = []  
+      for (let i = 0; i < pupilsNumber; i++) {
+        let pupilsName = prompt('Введіть  ім`я')
+        arrayOfNames.push(pupilsName)
+      }
+
+    // Шукаємо необхідні дані
+      function getIvanName(arrayOfNames) {
+        let sumNames = 0
+        for (let i = 0; i < arrayOfNames.length; i++) {
+          if (arrayOfNames[i] === 'Іван') {
+           sumNames++
+          }
+        }
+        return sumNames
+      }
+      
+    // Виводимо результат
+    document.write(`Іванів у масиві: ${getIvanName(arrayOfNames)}.`)
+    
+
+
+</script>
+
+</body>
+
+</html>

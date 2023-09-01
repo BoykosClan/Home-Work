@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Домашня робота №18</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body style="color: #fff">
+    <div class="wrapper">
+      <div class="wrapper__container">
+        <div class="tasks">
+          <div class="tasks">
+            <div class="task">
+              <div class="task__text">
+                <h1>Завдання 2</h1>
+                <p>Виконати завдання №2</p>
+                <a href="homework18.html" class="task__button">До головної!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label>
+        Сума в гривнях
+        <input id="inp1" autocomplete="off" type="text" name="form[]" data-error="Помилка" placeholder="0">
+      </label> <br>
+      <button id="btn" type="button">Конвертувати</button> <br>
+      <label>
+        Сума в євро
+        <input id="inp2" autocomplete="off" type="text" name="form[]" data-error="Помилка" placeholder="0">
+      </label> <br>
+      <label>
+        Сума в доларах
+        <input id="inp3" autocomplete="off" type="text" name="form[]" data-error="Помилка" placeholder="0">
+      </label>
+    </div>
+  
+    </div>
+    <script>
+    
+		function converter() {
+			const usdRate = 37
+			const euroRate = 41
+			const grn = document.getElementById('inp1').value
+			document.getElementById('inp2').value = (grn / euroRate).toFixed(2)
+			document.getElementById('inp3').value = (grn / usdRate).toFixed(2)
+		}
+		btn.onclick = converter
+		
+    </script>
+  </body>
+</html>

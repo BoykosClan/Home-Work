@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №17</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 4</h1>
+                        <p>Виконати завдання №4</p>
+                        <a href="homework17.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<script>
+// 4.	Особиста бібліотека. Картотека домашньої бібліотеки: дані книги (автори (піб, рік народження, короткий опис), назва книги, жанр, видавництво (назва, реєстраційний номер, рік засування)). Реалізувати розділи бібліотеки організувати додавання/вилучення книг та  вибір книг за назвою, за ПІБ автора, за видавництвом.
+        class Library {
+            constructor(title, newBook) {
+                this.title = title;
+                this.newBook = newBook
+            }
+            addBook(userBook) {
+                this.newBook = this.newBook.push(userBook)
+            }
+            removeBookByTitle(userTitle) {
+                this.newBook = this.newBook.filter(el => el.title == userTitle)
+            }
+            removeByName(userFirstname, userSurname) {
+                this.newBook = this.newBook.filter(el => el.firstName == userFirstname && el.surName == userSurname)
+            }
+            removeByEstablished(userEstablishedTitle) {
+                this.newBook = this.newBookp.filter(el => el.titleOfEstablished == userEstablishedTitle)
+            }
+        }
+		class Book {
+            constructor(initData) {
+                this.author = new Author(initData)
+                this.established = new Established(initData)
+                this.title = initData.title
+                this.janre = initData.janre
+            }
+        }
+
+        class Author {
+            constructor(initData) {
+                this.firstName = initData.firstName
+                this.surName = initData.surName
+                this.birthday = initData.birthday
+                this.description = initData.description
+            }
+        }
+
+        class Established {
+            constructor(initData) {
+                this.titleOfEstablished = initData.titleOfEstablished
+                this.registrNum = initData.registrNum
+                this.publishYear = initData.publishYear
+            }
+        }
+
+        let newBook = [
+            new Book({
+                firstName: 'J. R. R.',
+                surName: 'Tolkien',
+                birthday: 1892,
+                description: 'children`s fantasy novel',
+                titleOfEstablished: 'The Hobbit',
+                registrNum: 20223785,
+                publishYear: 1937,
+                title: 'There and Back Again',
+                janre: 'High fantasy'
+            }),
+            new Book({
+				firstName: 'J. R. R.',
+                surName: 'Tolkien',
+                birthday: 1892,
+                description: 'children`s fantasy novel',
+                titleOfEstablished: 'The Lord of the Rings',
+                registrNum: 204583785,
+                publishYear: 1968,
+                title: 'Middle-earth',
+                janre: 'High fantasy'
+            }),
+            new Book({
+				firstName: 'J. R. R.',
+                surName: 'Tolkien',
+                birthday: 1892,
+                description: 'children`s fantasy novel',
+                titleOfEstablished: 'The Silmarillion',
+                registrNum: 207213785,
+                publishYear: 1937,
+                title: 'Tolkien`s legendarium',
+                janre: 'High fantasy'
+            })
+        ]
+        let myLibrary = new Library('my library', newBook)
+        console.log(myLibrary)
+        myLibrary.removeBookByTitle('Middle Earth')
+        console.log(myLibrary)
+               
+</script>
+</body>
+</html>

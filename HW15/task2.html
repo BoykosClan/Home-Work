@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Домашня робота №15</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body style="color: #fff">
+    <div class="wrapper">
+      <div class="wrapper__container">
+        <div class="tasks">
+          <div class="tasks">
+            <div class="task">
+              <div class="task__text">
+                <h1>Завдання 2</h1>
+                <p>Виконати завдання №2</p>
+                <a href="homework15.html" class="task__button">До головної!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    // Задача 2. Створити об’єкт «Авто».  
+    let fuelCount = parseInt(prompt("Введіть кількість літрів авто"))
+		let passangerAdded = parseInt(prompt("Введіть кількість пасажирів для посадки у авто"))
+		let passangerRemove = parseInt(prompt("Введіть кількість пасажирів для висадки з авто"))
+   	class Auto {
+			constructor(brand, tankSize, availableLitres, fullSeatsCount, passengerCount) {
+				this.brand = brand
+				this.tankSize = tankSize
+				this.availableLitres = availableLitres
+				this.fullSeatsCount = fullSeatsCount
+				this.passengerCount = passengerCount
+			}
+
+			availableFuel() {
+				return this.tankSize - this.availableLitres
+
+			}
+			
+			fuel(litres) {
+				const accessLitres = this.availableFuel()
+				if (litres <= accessLitres) {
+					this.availableLitres += litres
+					document.write(`Ви заправили ${litres} літрів. У баку зараз ${this.availableLitres} літрів.<br> Доступно для заправки: ${auto.availableFuel()} літрів<br><br>`)
+				}
+				else {
+					document.write(`Ви не можете заправити ${litres} літрів. У баку вільне місце тільки для ${accessLitres} літрів.<br> `)
+				}
+				return accessLitres
+			}
+		
+			PassangersCount() {
+				document.write(`Всього у авто зараз ${this.passengerCount} пасажирів) <br><br>`)
+			}
+
+			availablePlace() {
+				return this.fullSeatsCount - this.passengerCount
+
+			}
+		
+			boarding(passenger) {
+				const accessPlaces = this.availablePlace()
+				if (passenger <= accessPlaces) {
+					this.passengerCount += passenger
+					document.write(`Ви посадили у авто ${passenger} пасажирів. Кількість зайнятих місць: ${this.passengerCount}.<br> Залишилось доступних місць : ${this.availablePlace()}<br><br>`)
+				}
+				else {
+					document.write(`Ви не можете посадити ${passenger} пасажирів). У машині є тільки ${accessPlaces} вільних місць.<br> `)
+				}
+				return accessPlaces
+			}
+			
+			landing(leaveCount) {
+				if (leaveCount <= this.passengerCount) {
+					this.passengerCount -= leaveCount
+					document.write(`Ви висадили з авто ${leaveCount} пасажирів). У авто залишилось: ${this.passengerCount} пасажирів)<br>`)
+				}
+				else {
+					document.write(`Ви не можете висадити ${leaveCount} пасажирів). У машині зараз тільки ${this.passengerCount} пасажир).<br> `)
+				}
+
+			}
+		}
+		let auto = new Auto('Toyota', 55, 40, 5, 3)
+		
+		auto.fuel(fuelCount)
+		auto.PassangersCount()
+		auto.boarding(passangerAdded)
+		auto.landing(passangerRemove)
+</script>
+  </body>
+</html>

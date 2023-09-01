@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №12</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 5</h1>
+                        <p>Виконати завдання №5</p>
+                        <a href="homework12.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<script>
+
+const names = ["Vova", "Mariana", "Sasha", "Julia", "Vadim", "Tanya", "Olga"];		
+names.sort((currentName, nextName) => {
+				if (nextName.length > currentName.length) {
+					return -1;
+				}
+			});
+			document.write(`${names}`);
+			function findName(arr, nameLength) {
+				let startPos = 0;
+				let endPos = arr.length - 1;
+
+				while (startPos <= endPos) {
+					const middle = Math.floor((startPos + endPos) / 2);
+					if (arr[middle].length === nameLength) return middle;
+					if (arr[middle].length > nameLength) endPos = middle - 1;
+					if (arr[middle].length < nameLength) startPos = middle + 1;
+				}
+				return -1;
+			}
+			let result = findName(names, 5);
+			if (result !== -1) document.write(`<br>Ім’я з довжиною 5 є в масиві під індексом ${result}`);
+			else document.write("Такого імені немає");   
+</script>
+</body>
+
+</html>

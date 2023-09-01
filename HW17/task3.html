@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №17</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 3</h1>
+                        <p>Виконати завдання №3</p>
+                        <a href="homework17.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<script>
+// 3.	Створити клас Нагадувач. Кожні вказані кількості секунд (використати setInterval) програма нагадує про якусь подію (це просто текст) і також виводиться порядковий номер скільки раз вже нагадування було. Зробити так, щоб неможна було зробити одночасно декілька об’єктів-нагадувачів. Методи зупинки таймера, метод зміни повідомлення без зупинки таймера.
+              class Reminber {
+                static reminderRef;
+                static interval = 2000;
+                static counter = 0;
+                constructor(massage) {
+                  if (Reminber.reminderRef) {
+                    return Reminber.reminderRef;
+                  }
+                  this.massage = massage;
+                  Reminber.reminderRef = this;
+                }
+                
+                run() {
+                  Reminber.intervalID = setInterval(() => {
+                    Reminber.counter += 1;
+                    alert(this.massage, Reminber.counter);
+                  }, Reminber.interval);
+                }
+                
+                stopRun() {
+                  clearInterval(Reminber.intervalID);
+                }
+                
+                changeMassage() {
+                  setTimeout(() => {
+                    this.massage = "До побачення";
+                  }, 7000);
+                }
+              
+                showInterval() {
+                  this.run();
+                  this.changeMassage();
+                  setTimeout(() => {
+                    this.stopRun();
+                    alert("Досить");
+                  }, 11000);
+                }
+              }
+              let res = new Reminber("Доброго ранку");
+              res.showInterval();
+</script>
+</body>
+</html>

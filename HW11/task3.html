@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №11</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 3</h1>
+                        <p>Виконати завдання №3</p>
+                        <a href="homework11.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<script>
+// 3. Користувач вводить кількість елементів. Створити масив, у якому перші 5 елементів заповнені 1-цями, а інші до кінця масиву заповнені 7-ками.
+// Вводимо дані
+    const arrRow = 6,arrCol = 6
+    const min = 1
+    const max = 6
+    let ships = 5
+    let ammunition = 5
+    function createTwoBimensionalArr(arrRow,arrCol){
+    let arr = []
+    for(let i = 0; i < arrRow; i++){
+    arrCols = new Array(arrCol).fill(0)
+    arr.push(arrCols)
+    }
+    return arr
+    }
+    let arrPlayingField = createTwoBimensionalArr(arrRow,arrCol)
+    function randomNum(min,max){
+    let randomNum =  min + Math.floor(Math.random() * max )
+    return randomNum
+    }
+    function setPositionShip(arrPlayingField,ships,min,max){
+    for(let i = 0; i < ships;){
+    let randomRow = randomNum(min,max)
+    let randomCol = randomNum(min,max)
+    if(arrPlayingField[randomRow - 1][randomCol - 1] === 0){
+    arrPlayingField[randomRow - 1][randomCol - 1] = 1
+    i++
+    }
+    }
+    return arrPlayingField
+    }
+    let playingFieldForUser = setPositionShip(arrPlayingField,ships,min,max,)
+    function getGame(playingFieldForUser,ammunition,ships){
+    let resultGame;
+    do {
+
+    let positonRowUser = parseInt(prompt('Введіть позицію рядка'))
+    let positonColUser = parseInt(prompt('Введіть позицію колонки'))
+    ammunition--
+    if(playingFieldForUser[positonRowUser - 1][positonColUser - 1] === 1){
+    playingFieldForUser[positonRowUser - 1][positonColUser - 1] = 0
+    alert("Ви попали")
+    ships--
+    }
+    else{
+    alert(`Нажаль ви не попали,у вас залишилося  ${ammunition} снаряди`)
+    }
+    } 
+    while ( ammunition !== 0);
+    if(ships === 0)
+    resultGame = document.write("Вітаю!Ви перемогли")
+    else
+    resultGame = document.write("Ви програли")
+    return resultGame
+    }
+    let overGame = getGame(playingFieldForUser,ammunition,ships)
+
+
+    
+</script>
+</body>
+</html>

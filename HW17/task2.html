@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Домашня робота №17</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body style="color: #fff">
+    <div class="wrapper">
+      <div class="wrapper__container">
+        <div class="tasks">
+          <div class="tasks">
+            <div class="task">
+              <div class="task__text">
+                <h1>Завдання 2</h1>
+                <p>Виконати завдання №2</p>
+                <a href="homework17.html" class="task__button">До головної!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // 2.	Створити службове авто (водій, марка, номер). Створити клас таким чином, щоб можна було створити тільки один екземпляр цього класу.
+    class Car {
+        static car;
+        constructor(driver, model, number) {
+          if (Car.car) return Car.car;
+
+          this.driver = driver;
+          this.model = model;
+          this.number = number;
+
+          Car.car = this;
+        }
+
+        toString() {
+          return `${this.driver}, ${this.model}, ${this.number}`;
+        }
+      }
+    const personFirst = new Car("Voldemar", "Toyota LAND CRUISER", "AH12345BI");
+    document.write("Перший екземпляр класу", personFirst, "<br>");
+    const personSecond = new Car("Volodymir", "Toyota Hillux", "AH54321BI");
+    document.write("Другий екземпляр класу", personSecond, "<br>");
+       
+    </script>
+  </body>
+</html>

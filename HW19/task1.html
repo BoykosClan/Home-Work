@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Домашня робота №18</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body style="color: #fff">
+    <div class="wrapper">
+      <div class="wrapper__container">
+        <div class="tasks">
+          <div class="task">
+            <div class="task__text">
+              <h1>Завдання 1</h1>
+              <p>Виконати завдання №1</p>
+              <a href="homework19.html" class="task__button">До головної!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<script>
+  const updateInputValues = (clickIndex) => {
+        const inputs = document.querySelectorAll(".input");
+        for (let i = clickIndex + 1; i < inputs.length; i++) {
+          const previousValue = parseInt(inputs[i - 1].value);
+          inputs[i].value = isNaN(previousValue) ? "" : previousValue + 1;
+        }
+        for (let i = clickIndex - 1; i >= 0; i--) {
+          const nextValue = parseInt(inputs[i + 1].value);
+          inputs[i].value = isNaN(nextValue) ? "" : nextValue - 1;
+        }
+      };
+      const input = (quantityInputs, text) => {
+        for (let i = 0; i < quantityInputs; i++) {
+          const div = document.createElement("div");
+          const label = document.createElement("label");
+          label.textContent = `${text} ${i + 1}`;
+          const input = document.createElement("input");
+          input.setAttribute("value", "");
+          input.setAttribute("type", "number");
+          input.classList.add("input");
+          input.oninput = () => updateInputValues(i);
+          label.append(input);
+          div.append(label);
+          document.body.append(div);
+        }
+      };
+      input(5, "Value");
+    
+  
+</script>
+  </body>
+</html>

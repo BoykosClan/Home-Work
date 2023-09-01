@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №16</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 3</h1>
+                        <p>Виконати завдання №3</p>
+                        <a href="homework16.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<script>
+
+class Firma {
+    #brand;
+    #since;
+    constructor(firmData) {
+        this.Brand = firmData.brand;
+        this.Since = firmData.since;
+        this.services = firmData.services;
+        this.branches = firmData.branches;
+    }
+    get Brand() {
+        return this.#brand;
+    }
+
+    set Brand(newVal) {
+        if (typeof newVal !== "string") {
+            throw new Error("Назва фірми має бути строковим значенням.");
+        }
+        if (newVal === "") {
+            throw new Error("Назва не може бути пустим рядком.");
+        }
+        this.#brand = newVal;
+    }
+    get Since() {
+        return this.#since;
+    }
+
+    set Since(newVal) {
+        if (newVal === null || newVal === undefined) {
+            throw new Error("Дата заснування не може бути null або undefined.");
+        }
+        this.#since = newVal;
+    }
+   
+    existenceYears() {
+        const currentYear = new Date().getFullYear(); 
+        const sinceYear = parseInt(this.Since.split(".")[0]);
+        return currentYear - sinceYear;
+    }
+
+    showCityBranches(city) {
+        const filteredBranches = this.branches.filter((branch) => branch.branchesCity === city);
+        if (filteredBranches.length === 0) {
+            document.write(`У місті ${city} філіалів не знайдено.<br>`);
+        } else {
+            document.write(`Філіали у місті ${city}:<br>`);
+            filteredBranches.forEach((branch) => {
+                document.write(
+                    `Країна: ${branch.branchesCountry}, <br>Місто: ${branch.branchesCity}, <br>Адреса: ${branch.branchesStreet}, ${branch.branchesHouse}<br>`
+                );
+            });
+        }
+    }
+
+    calcAvailableServices(cost, term) {
+        const availableServices = this.services.filter((service) => service.servCost <= cost && service.servTerm <= term);
+        if (availableServices.length === 0) {
+            document.write(`На жаль, за вказану суму грошей ${term} днів послуг не знайдено.`);
+        } else {
+            console.log(`Доступні послуги за ${cost} грн та ${term} днів:`);
+            availableServices.forEach((service) => {
+                document.write(`Послуга: ${service.servName},<br> Вартість: ${service.servCost}, <br> Термін виконання: ${service.servTerm} днів <br>`);
+            });
+        }
+        return;
+    }
+
+    toString() {
+        return `Компанія: ${this.Brand}, <br> Рік заснування: ${this.Since}<br>`;
+    }
+}
+
+let firm1 = [
+    {
+        brand: "Boyko`S Clan Corp",
+        since: "1987.04",
+        services: [
+            {
+                servName: "Послуга 1",
+                servCost: 1500,
+                servTerm: 15, 
+            },
+            {
+                servName: "Послуга 2",
+                servCost: 2000,
+                servTerm: 25, 
+            },
+            {
+                servName: "Послуга 3",
+                servCost: 3080,
+                servTerm: 32, 
+            },
+        ],
+        branches: [
+            {
+                branchesCountry: "Україна",
+                branchesCity: "Вінниця",
+                branchesStreet: "Соборна",
+                branchesHouse: 32,
+            },
+            {
+                branchesCountry: "Україна",
+                branchesCity: "Львів",
+                branchesStreet: "Кавова",
+                branchesHouse: 22,
+            },
+            {
+                branchesCountry: "Україна",
+                branchesCity: "Одеса",
+                branchesStreet: "Дерибасівська",
+                branchesHouse: 180,
+            },
+        ],
+    },
+];
+
+let atm = new Firma(firm1[0]);
+document.write(atm.toString(1500, 15));
+document.write("Кількість років існування Компанії:", atm.existenceYears());
+atm.showCityBranches("Вінниця");
+atm.calcAvailableServices(1500, 15);
+
+    
+    
+</script>
+</body>
+</html>

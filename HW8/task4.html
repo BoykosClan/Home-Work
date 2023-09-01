@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №8</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 4</h1>
+                        <p>Виконати завдання №6</p>
+                        <a href="homework8.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    // Задача 6. Дано послідовність цін товарів та назв (у окремих масивах). Вивести на екран ті, які може собі дозволити користувач (кількість грошей задається).
+   
+      // 1. Введення необхідних даних
+
+      const productsPrice = [65, 450, 50, 75, 22, 130, 55, 25, 8.5, 12, 52];
+      const productsTitle = ["Гречка","Цукерки(Монблан)","Молоко","Сир","Хліб","Яйця","М'ясо","Риба","Картопля","Огірки", "Coca-Cola"
+      ];
+      const userBudget = parseInt(prompt('Введіть кількість ваших грошей'));
+
+      // 2. Обчислення результату
+
+      function getAfforableProduct(prices, titles) {
+        let afforableList = [];
+        for (let i = 0; i < prices.length; i++) {
+          if (prices[i] <= userBudget) afforableList.push(titles[i]);
+        }
+        return afforableList;
+      }
+      // 3. Виведення результату
+      document.write(`Які продукти користувач може собі дозволити з сумою ${userBudget} грн <br> ${getAfforableProduct(productsPrice, productsTitle)}`);
+    
+    </script>
+</body>
+
+</html>

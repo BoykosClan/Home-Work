@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №15</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 3</h1>
+                        <p>Виконати завдання №3</p>
+                        <a href="homework15.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<script>
+
+class MultChecker {
+            constructor (number, randNumber, correctAnswer, incorrectAnswer) {
+                this.number = number,
+                this.randNumber = randNumber,
+                this.correctAnswer = correctAnswer,
+                this.incorrectAnswer = incorrectAnswer
+            }
+
+            createQuestion() {
+                for (let i = 0; i < 4; i++) {
+                    this.randNumber = 1 + Math.floor(Math.random() * 9 - 1 + 1)
+                    alert(`${this.number} * ${this.randNumber} ?`)
+                    let userAnswer = parseInt(prompt('Введіть відповідь:'))
+                    let test = this.number * this.randNumber
+                    if (test === userAnswer) {
+                        alert('Правильно!')
+                        this.correctAnswer += 1;
+                    } else {
+                        alert('Спробуйте ще раз!')
+                        this.incorrectAnswer += 1;
+                    }
+                } 
+                this.render()
+            }
+
+            render() {
+            document.write(`Правильних відповідей: ${this.correctAnswer}.<br> Неправильних відповідей: ${this.incorrectAnswer}`)
+            }
+        }
+
+        let answer = new MultChecker(9, 0, 0, 0)
+        answer.createQuestion()
+    
+    
+</script>
+</body>
+</html>

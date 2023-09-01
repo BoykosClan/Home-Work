@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №3</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script>
+// Завдання 1
+// 2.	З клавіатури вводиться ціна товару і кількість грошей. Якщо грошей не вистачає то відмовляємо у покупці, інакше, якщо ще залишаються гроші, то пропонуємо купити лотерею за 4 грн.
+// Вводимо дані
+let goodsPrice = parseFloat(prompt('Ціна товару', '0'))
+        
+// Враховуємо результати
+let customerMoney = parseFloat(prompt('Гроші покупця', '0'))
+const loteryTicketprice = 4
+if (customerMoney >= goodsPrice + loteryTicketprice) {
+if (confirm(`Чи не бажаєте купити лотерейний білет за 4 грн?`))
+alert(`Дякуємо за покупку`)
+else alert('Шкода')
+}
+else if (customerMoney >= goodsPrice) {
+ alert('Покупка вдала')
+}
+else if (customerMoney <= goodsPrice) {
+// Виводимо результати
+alert('У вас недостатньо коштів!')
+}        
+</script>
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="tasks">
+                    <div class="task">
+                        <div class="task__text">
+                            <h1>Завдання 2</h1>
+                            <p>Виконати завдання №2</p>
+                            <a href="homework3.html" class="task__button">До головної!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №3</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<script>
+//Введення даних 
+// 6.	З клавіатури вводиться номер дня тижня.Вивести на екран назву дня.
+let daysOfTheWeek = parseInt(prompt('Введіть номер дня тижня!', '0'))
+let result
+//Знаходимо результат 
+switch (daysOfTheWeek) {
+case 1:
+res = 'Понеділок' 
+break;
+case 2:
+res = 'Вівторок'
+break;
+case 3:
+res = 'Середа'
+break;
+case 4:
+res = 'Четвер'
+break;
+case 5:
+res = 'П`ятниця'
+break;
+case 6:
+res = 'Субота'
+break;
+case 7:
+res = 'Неділя'
+break;
+default:   
+//Виводимо результат
+res = ('Такого дня не має, у тижні 7 днів!')
+break;
+}
+alert(res)  
+
+</script>
+<div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 6</h1>
+                        <p>Виконати завдання №6</p>
+                            <a href="homework3.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

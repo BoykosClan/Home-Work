@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашня робота №5</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="color: #fff;">
+   
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="tasks">
+                <div class="task">
+                    <div class="task__text">
+                        <h1>Завдання 3</h1>
+                        <p>Виконати завдання №3</p>
+                        <a href="homework5.html" class="task__button">До головної!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+// Завдання 1. Вивести з використанням циклів маркований список з випадковими числами (1-100). Кількість випадкових чисел вводиться користувачем.
+// Вводимо дані
+document.write('<ul>')
+const max = 1
+const min = 100
+// Вираховуємо результати
+const enterNumber = parseInt(prompt('Введіть кількість випадкових чисел'))
+for (i = 1; i <= enterNumber; i++) {
+const randomNum = Math.floor(Math.random() * (min - max + 1)) + max
+// Виводимо результати на екран
+document.write(`<li style="list-style:inside">${randomNum}</li>`)
+}
+document.write('</ul>')
+</script>
+
+</body>
+
+</html>

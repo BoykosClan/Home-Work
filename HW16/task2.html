@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Домашня робота №16</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body style="color: #fff">
+    <div class="wrapper">
+      <div class="wrapper__container">
+        <div class="tasks">
+          <div class="tasks">
+            <div class="task">
+              <div class="task__text">
+                <h1>Завдання 2</h1>
+                <p>Виконати завдання №2</p>
+                <a href="homework16.html" class="task__button">До головної!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      //Створити клас TMoney для роботи з грошовими сумами.
+      // Сума повинна зберігатися у вигляді доларового еквіваленту.
+      // Реалізувати методи додавання/вилучення грошової маси, вказуючи необхідну суму у гривнях, та визначення курсу долара, при якому сума у гривнях збільшиться на 100. Курс долара зберігати в окремому полі.
+      class Money {
+        #dollarRate;
+        #dollarBalance;
+        constructor(initGRNBalance, dollarRate) {
+          this.Rate = dollarRate;
+          this.Balance = initGRNBalance;
+        }
+        get Balance() {
+          return this.#dollarBalance * this.Rate;
+        }
+        set Balance(grnSum) {
+          if (grnSum < 0)
+            throw new Error(
+              "Помилка. Початкова сума не може бути меншою за нуль"
+            );
+          this.#dollarBalance = grnSum / this.Rate;
+        }
+        get Rate() {
+          return this.#dollarRate;
+        }
+        set Rate(newValue) {
+          if (newValue < 0)
+            throw new Error("Сума поповнення має бути більшою за нуль");
+          this.#dollarRate = newValue;
+        }
+
+        addMoney(grnSum) {
+          if (grnSum < 0)
+            throw new Error("Сума поповнення має бути більшою за нуль");
+          this.Balance += grnSum;
+        }
+
+        getMoney(grnSum) {
+          if (grnSum < 0)
+            throw new Error("Сума поповнення має бути більшою за нуль");
+          if (grnSum > this.Balance)
+            throw new Error("Немає стільки грошей на рахунку");
+          this.Balance -= grnSum;
+        }
+
+        getTarget100Rate() {
+          return (this.Balance + 100) / this.#dollarBalance;
+        }
+        toString() {
+          return `Актуальний курс долара: ${
+            this.Rate
+          } грн.<br>На рахунку (гривня): ${this.Balance.toFixed(
+            2
+          )} грн.<br> На рахунку (USD): ${this.#dollarBalance.toFixed(
+            2
+          )}<br><br>`;
+        }
+      }
+      let money = new Money(0, 36);
+      let addSum = parseInt(prompt("Введіть суму для додавання"));
+      let remsum = parseInt(prompt("Введіть суму для вилучення"));
+      money.addMoney(addSum);
+      document.write(`Додано: ${addSum} грн.<br>`);
+      document.write(money);
+      document.write("<br>");
+      money.getMoney(remsum);
+      document.write(`Вилучено: ${remsum} грн.<br>`);
+      document.write(money);
+    </script>
+  </body>
+</html>

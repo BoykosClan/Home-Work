@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Домашня робота №16</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body style="color: #fff">
+    <div class="wrapper">
+      <div class="wrapper__container">
+        <div class="tasks">
+          <div class="task">
+            <div class="task__text">
+              <h1>Завдання 1</h1>
+              <p>Виконати завдання №1</p>
+              <a href="homework16.html" class="task__button">До головної!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Створити клас TDate для роботи із датами у форматі “день.місяць.рік”. Дата представляється структурою із трьома полями. Реалізувати методи збільшення/зменшення дати на певну кількість днів, місяців чи років. Введення та виведення дати реалізувати за допомогою методу  toString.
+      class Date {
+        sourceDateInput;
+        day;
+        month;
+        year;
+        #daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        #monthsInYear = 12;
+
+        constructor(day, month, year) {
+          this.day = day;
+          this.month = month;
+          this.year = year;
+          this.sourceDateInput = `${day}.${month}.${year}`; 
+        }
+
+        sourceDate() {
+          if (!this.validDate()) {
+            throw new Error("Некоректна початкова дата");
+          }
+          return this.sourceDateInput; 
+        }
+
+        leapYear() {
+          return (
+            (this.year % 4 === 0 && this.year % 100 !== 0) ||
+            this.year % 400 === 0
+          );
+        }
+
+        
+        validDate() {
+          if (
+            this.year < 1 ||
+            this.month < 1 ||
+            this.month > this.#monthsInYear ||
+            this.day < 1 ||
+            this.day > this.getDaysInMonth()
+          ) {
+            return false;
+          }
+          return true;
+        }
+
+        
+        getDaysInMonth() {
+          if (this.month === 2 && this.leapYear()) {
+            return 29;
+          }
+          return this.#daysInMonth[this.month - 1];
+        }
+
+        addDays(days) {
+          this.day += days;
+          while (this.day > this.getDaysInMonth()) {
+            this.day -= this.getDaysInMonth();
+            this.addMonths(1);
+          }
+          while (this.day < 1) {
+            this.addMonths(-1);
+            this.day += this.getDaysInMonth();
+          }
+        }
+        addMonths(months) {
+          const totalMonths =
+            this.year * this.#monthsInYear + this.month - 1 + months;
+          this.year = Math.floor(totalMonths / this.#monthsInYear);
+          this.month = (totalMonths % this.#monthsInYear) + 1;
+        }
+        addYears(years) {
+          this.year += years;
+        }
+        addTime(daysToAdd = 0, monthsToAdd = 0, yearsToAdd = 0) {
+          const totalMonths =
+            this.year * this.#monthsInYear + this.month - 1 + monthsToAdd;
+          this.year = Math.floor(totalMonths / this.#monthsInYear) + yearsToAdd;
+          this.month = (totalMonths % this.#monthsInYear) + 1;
+          this.addDays(daysToAdd);
+
+          if (!this.validDate()) {
+            throw new Error("Некоректна дата");
+          }
+        }
+        // Вводимо необхідні дані
+        performOperation() {
+          const day = parseInt(
+            prompt("Кількість днів для зміни (дні додаються):")
+          );
+          const month = parseInt(
+            prompt("Кількість місяців для зміни (Місяці додаються):")
+          );
+          const year = parseInt(
+            prompt("Кількість років для зміни (Роки додаються):")
+          );
+
+          this.addTime(day, month, year);
+        }
+
+        formatValue(value) {
+          return value < 10 ? `0${value}` : `${value}`;
+        }
+
+        toString() {
+          const formattedDay = this.formatValue(this.day);
+          const formattedMonth = this.formatValue(this.month);
+          return `${formattedDay}.${formattedMonth}.${this.year}`;
+        }
+      }
+      const dateInput = prompt(
+        "Введіть початкову дату у форматі dd.mm.yyyy",
+        "13.08.2023"
+      );
+      const [dd, mm, yy] = dateInput.split(".").map((val) => parseInt(val, 10));
+
+      let res = new Date(dd, mm, yy);
+      res.performOperation();
+      console.log(res.toString());
+
+      // 3. Виведення результату
+      document.write(`
+				Початкова дата:
+						${res.sourceDate()}<br>
+				Обчисленна дата:
+						${res.toString()}
+				
+			`);
+    </script>
+  </body>
+</html>
